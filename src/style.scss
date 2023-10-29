@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&family=Work+Sans:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+
+$body-color: #1a140d;
+$body-font-family: "Work Sans", "Arial", sans-serif;
+$form-font-family: "PT Serif", serif;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  line-height: 1;
+  font-family: $body-font-family;
+  color: $body-color;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background-image: url(./assets/general-back.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.main {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+.form-container {
+  max-width: 50rem;
+  max-height: 40rem;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #425a65;
+}
+.form-section {
+  position: relative;
+  max-width: 36rem;
+  max-height: 33rem;
+  width: 100%;
+  height: 100%;
+  background-color: #FFFFFF;
+  padding: 40px 20px 20px;
+  font-family: $form-font-family;
+  color: #111111;
+}
+.form-wrapper {
+  width: 100%;
+  height: 100%;
+  max-height: 25rem;
+  padding-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.form {
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form-title {
+  text-align: center;
+  font-weight: 500;
+  line-height: 27px;
+  letter-spacing: -0.3px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
