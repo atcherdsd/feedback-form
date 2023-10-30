@@ -116,14 +116,13 @@ body {
     background: inherit;
     text-overflow: ellipsis;
     max-width: 100%;
+    margin-bottom: 7px;
   }
   .input.error-field,
   .textarea.error-field {
-    color: #FF2222;
     border-bottom: 2px solid #FF2828;
     border-image: none;
-    padding-bottom: 4.2px;
-   }
+  }
   .textarea {
     min-height: 70px;
   }
@@ -170,13 +169,12 @@ input[type="submit"],
     background-color: #76b175;
   }
 }
-.error-wrapper {
-  position: absolute;
-  margin-top: 42px;
-}
 .error {
   font-size: 10px;
   color: #FF2222;
+}
+.item4 .error {
+  margin-top: -1rem;
 }
 .hidden {
   display: none;

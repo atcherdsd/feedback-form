@@ -1,4 +1,4 @@
-import { formSignatures, placeholders } from "../common/utils";
+import { errors, formSignatures, placeholders } from "../common/utils";
 import drawPopup from "../popup/popupView";
 
 const drawPage = (): void => {
@@ -7,25 +7,26 @@ const drawPage = (): void => {
 			<section class="form-section" id="form-view">
 				<h1 class="form-title">${formSignatures.title}</h1>
 				<div class="form-wrapper">
-					<form class="form" id="contact-data" action="mailto:example@gmail.com" enctype="text/plain" method="post">
+					<form class="form" id="contact-data">
 						<div class="form-group item1">
 							<label for="form-name">${formSignatures.name}</label>
-							<input id="form-name" class="input" type="text" name="name" autocomplete="given-name" required>
+							<input id="form-name" class="input" type="text" name="name" autocomplete="given-name">
 							<div class="error-wrapper">
-								<div class="error hidden"></div>
+								<div class="error hidden">${errors.empty}</div>
 							</div>
 						</div>
 						<div class="form-group item2">
 							<label for="form-email">${formSignatures.email}</label>
 							<input id="form-email" class="input" type="email" name="email" 
-								placeholder="${placeholders.email}" autocomplete="email" required>
+								placeholder="${placeholders.email}" autocomplete="email">
 							<div class="error-wrapper">
 								<div class="error hidden"></div>
 							</div>
 						</div>
 						<div class="form-group item3">
 							<label for="form-phone">${formSignatures.phone}</label>
-							<input id="form-phone" class="input" type="text" name="phone" autocomplete="tel" required>
+							<input id="form-phone" class="input" type="text" name="phone" 
+								placeholder="${placeholders.phone}" autocomplete="tel">
 							<div class="error-wrapper">
 								<div class="error hidden"></div>
 							</div>
@@ -35,9 +36,9 @@ const drawPage = (): void => {
 							<textarea id="form-message" class="textarea" name="message" rows="5" cols="33"
 								placeholder="${
 									placeholders.message
-								}" maxlength="10" autocomplete="off" required></textarea>
+								}" maxlength="10" autocomplete="off"></textarea>
 							<div class="error-wrapper">
-								<div class="error hidden"></div>
+								<div class="error hidden">${errors.empty}</div>
 							</div>
 						</div>
 						<input id="submit" type="submit" value="${formSignatures.submit}">

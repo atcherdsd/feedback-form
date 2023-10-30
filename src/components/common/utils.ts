@@ -10,12 +10,14 @@ export const formSignatures = {
 
 export const placeholders = {
 	email: "example@gmail.com",
+	phone: "+375(__)___-__-__",
 	message: "Введите сообщение длиной до 500 символов",
 };
 
 export const errors = {
 	empty: "Заполните поле",
 	email: "Email-адрес не корректен",
+	phone: "Введен неполный номер телефона",
 };
 
 export const popupContent = [
