@@ -27,3 +27,5 @@ To start the server, run
 npm run start:server 
 ```
 (port 5000 is used).
+
+Client side demo (serverless and without server-side validation) is [here](https://atcherdsd.github.io/feedback-form/).
