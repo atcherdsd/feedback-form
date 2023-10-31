@@ -26,7 +26,7 @@ const drawPage = (): void => {
 						<div class="form-group item3">
 							<label for="form-phone">${formSignatures.phone}</label>
 							<input id="form-phone" class="input" type="text" name="phone" 
-								placeholder="${placeholders.phone}" autocomplete="tel">
+								placeholder="${placeholders.phone}" autocomplete="off">
 							<div class="error-wrapper">
 								<div class="error hidden"></div>
 							</div>
@@ -36,7 +36,7 @@ const drawPage = (): void => {
 							<textarea id="form-message" class="textarea" name="message" rows="5" cols="33"
 								placeholder="${
 									placeholders.message
-								}" maxlength="10" autocomplete="off"></textarea>
+								}" maxlength="500" autocomplete="off"></textarea>
 							<div class="error-wrapper">
 								<div class="error hidden">${errors.empty}</div>
 							</div>

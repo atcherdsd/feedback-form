@@ -1,3 +1,5 @@
+export const HOSTNAME = "http://localhost:5000/api";
+
 export const formSignatures = {
 	title: "Свяжитесь с нами",
 	name: "Имя",
@@ -34,3 +36,5 @@ export const popupContent = [
 		button: "Закрыть окно",
 	},
 ];
+
+export const serverMessage = "Ваша заявка успешно отправлена";

@@ -1,9 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Work+Sans:wght@300;400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+@import "mixin.scss";
 
 $body-color: #1a140d;
 $body-font-family: "Open Sans", "Arial", sans-serif;
 $title-font-family: "PT Serif", serif;
+$form-section-color: #111111;
+$form-bg-color: #FFFFFF;
+$label-color: #7C7C7C;
+$border-color-dark: #093f1c;
+$border-color-light: #07e130;
+$border-error-color: #FF2828;
+$error-color: #FF2222;
+$button-bg-dark: #08712d;
+$button-bg-light: #02b123;
+$details-btn-color: #5b2828;
+$details-btn-bg-color-hover: #c1f7c0;
+$details-btn-bg-color-active: #76b175;
+$overlay-bg-color: #76b175db;
 
 * {
   box-sizing: border-box;
@@ -22,10 +36,8 @@ body {
   font-family: $body-font-family;
   color: $body-color;
   font-size: 16px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  background-image: url(./assets/general-back.png);
+  @include flex-between;
+  background-image: url(../assets/general-back.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -51,7 +63,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #425a65;
 }
 .form-section {
   position: relative;
@@ -59,9 +70,9 @@ body {
   max-height: 33rem;
   width: 100%;
   height: 100%;
-  background-color: #FFFFFF;
+  background-color: $form-bg-color;
   padding: 40px;
-  color: #111111;
+  color: $form-section-color;
   border-radius: 0.5rem;
 }
 .form-wrapper {
@@ -69,15 +80,11 @@ body {
   height: 100%;
   max-height: 25rem;
   padding-top: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  @include flex-between;
 }
 .form {
   height: 90%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  @include flex-between;;
 }
 
 .form-title {
@@ -88,12 +95,10 @@ body {
   font-family: $title-font-family;
 }
 .form-group {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  @include flex-between;;
   height: 2.625rem;
   label {
-    color: #7C7C7C;
+    color: $label-color;
     text-transform: uppercase;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -110,7 +115,7 @@ body {
     font-weight: 400;
     border: none;
     border-bottom: 2px solid;
-    border-image: linear-gradient(to right, #093f1c, #07e130);
+    border-image: linear-gradient(to right, $border-color-dark, $border-color-light);
     border-image-slice: 1;
     outline: none;
     background: inherit;
@@ -120,7 +125,7 @@ body {
   }
   .input.error-field,
   .textarea.error-field {
-    border-bottom: 2px solid #FF2828;
+    border-bottom: 2px solid $border-error-color;
     border-image: none;
   }
   .textarea {
@@ -128,7 +133,7 @@ body {
   }
   .input::placeholder,
   .textarea::placeholder {
-    color: #111111;
+    color: $form-section-color;
   }
 }
 input[type="submit"],
@@ -138,16 +143,16 @@ input[type="submit"],
   width: 100%;
   margin: 0 auto;
   min-height: 40px;
-  background-image: linear-gradient(90deg, #08712d, #02b123);
-  color: #fff;
+  background-image: linear-gradient(90deg, $button-bg-dark, $button-bg-light);
+  color: $form-bg-color;
   border: none;
   border-radius: 2px;
   cursor: pointer;
   &:hover {
-    background: #02b123;
+    background: $button-bg-light;
   }
   &:active {
-    background: #08712d;
+    background: $button-bg-dark;
   }
 }
 .btn-close {
@@ -158,20 +163,20 @@ input[type="submit"],
   border: none;
   cursor: pointer;
   min-height: 25px;
-  color: #5b2828;
+  color: $details-btn-color;
   background: none;
   &:hover {
     border-radius: 2px;
-    background-color: #c1f7c0;
+    background-color: $details-btn-bg-color-hover;
     transition: 0.2s;
   }
   &:active {
-    background-color: #76b175;
+    background-color: $details-btn-bg-color-active;
   }
 }
 .error {
-  font-size: 10px;
-  color: #FF2222;
+  font-size: 14px;
+  color: $error-color;
 }
 .item4 .error {
   margin-top: -1rem;
@@ -221,7 +226,7 @@ input[type="submit"],
   top: 0;
   right: 0;
   bottom: 0;
-  background-color: #76b175db;
+  background-color: $overlay-bg-color;
   z-index: 1;
   .popup-container {
     position: relative;
@@ -229,7 +234,7 @@ input[type="submit"],
     top: 25%;
     min-height: 300px;
     max-width: 465px;
-    background-color: #fff;
+    background-color: $form-bg-color;
     padding-top: 15px;
     .popup-title {
       text-align: center;
@@ -240,4 +245,20 @@ input[type="submit"],
       padding-bottom: 1rem;
     }
   }
+}
+.notice-wrapper {
+  position: absolute;
+  top: 30px;
+  left: 145px;
+}
+.notice {
+  width: 300px;
+  height: 50px;
+  text-align: center;
+  background-color: $border-color-light;
+  border-radius: 5px;
+  padding-top: 15px;
+  position: relative;
+  z-index: 5;
+  color: $form-bg-color;
 }
