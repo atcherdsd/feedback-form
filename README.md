@@ -1,3 +1,3 @@
 # Feedback form
 
-Demo is [here](https://atcherdsd.github.io/feedback-form/) (without server).
+Client side demo is [here](https://atcherdsd.github.io/feedback-form/) (without server).
