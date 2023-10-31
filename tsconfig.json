@@ -7,8 +7,6 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-		// "allowImportingTsExtensions": true,
-		// "noEmit": true,
 		"esModuleInterop": true,
     "target": "ESNext",
     "sourceMap": true,
